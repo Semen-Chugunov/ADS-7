@@ -72,4 +72,4 @@ struct SYM {
     int prior;
     struct SYM* next;
 };
-#endif
+#endif  // INCLUDE_TPQUEUE_H_
