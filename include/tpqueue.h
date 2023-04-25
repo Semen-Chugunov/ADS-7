@@ -16,19 +16,19 @@ class TPQueue {
             head->prior = data.prior;
             head->next = nullptr;
         } else {
-          if (!head->next) {
-             T* temp = new T;
-             temp->ch = data.ch;
-             temp->prior = data.prior;
-             head->next = temp;
-             temp->next = nullptr;
-          } else {
-              if (head->prior < data.prior) {
+          if (head->prior < data.prior) {
                 T* temp = new T;
                 temp->ch = data.ch;
                 temp->prior = data.prior;
                 temp->next = head;
                 head = temp;
+          } else {
+              if (!head->next) {
+                T* temp = new T;
+                temp->ch = data.ch;
+                temp->prior = data.prior;
+                head->next = temp;
+                temp->next = nullptr;
               } else {
                 T* cur = head;
                 while (cur->next && cur->next->prior >= data.prior) {
