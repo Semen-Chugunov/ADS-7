@@ -34,23 +34,23 @@ class TPQueue {
                 while (cur->next && cur->next->prior >= data.prior) {
                     cur = cur->next;
                 }
-                if (cur->next->prior < data.prior) {
-                        T* temp = new T;
-                        temp->ch = data.ch;
-                        temp->prior = data.prior;
-                        temp->next = cur->next;
-                        cur->next = temp;
-                } else {
-                  if (!cur->next) {
+                if (!cur->next) {
                     T* temp = new T;
                     temp->ch = data.ch;
                     temp->prior = data.prior;
                     cur->next = temp;
                     temp->next = nullptr;
+                } else {
+                    if (cur->next->prior < data.prior) {
+                        T* temp = new T;
+                        temp->ch = data.ch;
+                        temp->prior = data.prior;
+                        temp->next = cur->next;
+                        cur->next = temp;
                   }
                 }
               }
-            }
+          }
         }
     }
     const T& pop() {
