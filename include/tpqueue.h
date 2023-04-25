@@ -11,10 +11,10 @@ class TPQueue {
  public:
     void push(const T& data) {
         if (isEmpty()) {
-	   head = new T;
-	   head->ch = data.ch;
-	   head->prior = data.prior;
-	   head->next = nullptr;
+            head = new T;
+            head->ch = data.ch;
+            head->prior = data.prior;
+            head->next = nullptr;
         } else {
           if (!head->next) {
              T* temp = new T;
