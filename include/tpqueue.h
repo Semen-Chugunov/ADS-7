@@ -59,7 +59,7 @@ class TPQueue {
         } else {
             T* temp = head;
             head = head->next;
-            return temp;
+            return *temp;
         }
     }
     bool isEmpty() const {
