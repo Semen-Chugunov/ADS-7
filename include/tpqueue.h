@@ -1,3 +1,4 @@
+// Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
 #include <string>
@@ -10,18 +11,18 @@ class TPQueue {
  public:
     void push(const T& data) {
         if (isEmpty()) {
-            head = new T;
-		head->ch = data.ch;
-		head->prior = data.prior;
-            head->next = nullptr;
+	   head = new T;
+	   head->ch = data.ch;
+	   head->prior = data.prior;
+	   head->next = nullptr;
         } else {
           if (!head->next) {
-                T* temp = new T;
-                temp->ch = data.ch;
-                temp->prior = data.prior;
-                head->next = temp;
-                temp->next = nullptr;
-            } else { 
+             T* temp = new T;
+             temp->ch = data.ch;
+             temp->prior = data.prior;
+             head->next = temp;
+             temp->next = nullptr;
+          } else {
               if (head->prior < data.prior) {
                 T* temp = new T;
                 temp->ch = data.ch;
@@ -64,7 +65,6 @@ class TPQueue {
     bool isEmpty() const {
         return !head;
     }
-
 };
 
 struct SYM {
@@ -72,4 +72,4 @@ struct SYM {
     int prior;
     struct SYM* next;
 };
-#endif 
+#endif
